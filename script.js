@@ -24,7 +24,7 @@ const setContent = (selector, content) => {
 
 document.querySelector(".check").addEventListener("click", function () {
   const guessedNumber = Number(document.querySelector(".input").value);
-  if (score > 1) {
+  if (score > 1 && guessedNumber !== number) {
     if (!guessedNumber) {
       setContent(".message", "🤨 Enter a number...");
     } else if (guessedNumber > number) {
@@ -33,19 +33,19 @@ document.querySelector(".check").addEventListener("click", function () {
     } else if (guessedNumber < number) {
       setContent(".message", "📉 Too Low...");
       score--;
-    } else if (guessedNumber === number) {
-      setContent(".message", "🎉 Correct Number... ");
-      showNumber(true, "rgb(0,255,0,0.95)");
-      disableFieldAndButton(true);
-      if (score > highscore) {
-        highscore = score;
-        setContent(".highScore", highscore);
-      }
     }
     if (score <= 3) setContent(".scoreText", "😱 Score:");
     else if (score > 3 && score <= 7) setContent(".scoreText", "🤕 Score:");
     else if (score > 7 && score <= 12) setContent(".scoreText", "🤒 Score:");
     else if (score > 12 && score < 15) setContent(".scoreText", "😵‍💫 Score:");
+  } else if (guessedNumber === number) {
+    setContent(".message", "🎉 Correct Number... ");
+    showNumber(true, "rgb(0,255,0,0.95)");
+    disableFieldAndButton(true);
+    if (score > highscore) {
+      highscore = score;
+      setContent(".highScore", highscore);
+    }
   } else {
     score--;
     setContent(".message", "😭 Game Over...");
