@@ -35,7 +35,7 @@ document.querySelector(".check").addEventListener("click", function () {
       score--;
     } else if (guessedNumber === number) {
       setContent(".message", "🎉 Correct Number... ");
-      showNumber(true, "rgb(0,255,0,0.8)");
+      showNumber(true, "rgb(0,255,0,0.95)");
       disableFieldAndButton(true);
       if (score > highscore) {
         highscore = score;
