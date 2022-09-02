@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess My Number</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <button class="again">Again!</button>
+        <div class="description">(Between 1 and 20)</div>
+      </div>
+      <div class="middle">
+        <div class="title">Guess My Number!</div>
+        <div class="guess">?</div>
+      </div>
+      <div class="below-part">
+        <div class="left-container">
+          <input class="input" type="number" min="1" max="20" />
+          <button class="check">Check!</button>
+        </div>
+        <div class="right-container">
+          <p class="message">😇 Start Guessing...</p>
+          <div class="score-container">
+            <div class=>
+              <div class="flex-row">
+                <p class="scoreText">🥳 Score:</p>
+                <span class="score">20</span>
+              </div>
+            </div>
+            <div >
+              <div class="flex-row">
+                <p>🥳 HighScore:</p>
+                <span class="highScore">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
