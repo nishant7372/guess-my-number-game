@@ -22,11 +22,18 @@ const setContent = (selector, content) => {
   document.querySelector(selector).textContent = content;
 };
 
-document.querySelector(".check").addEventListener("click", function () {
+const resetInput = () => {
+  document.querySelector(".input").value = "";
+};
+
+document.querySelector(".check").addEventListener("click", function (event) {
+  event.preventDefault();
   const guessedNumber = Number(document.querySelector(".input").value);
   if (score > 1 && guessedNumber !== number) {
     if (!guessedNumber) {
       setContent(".message", "🤨 Enter a number...");
+    } else if (guessedNumber > 20 || guessedNumber < 1) {
+      setContent(".message", "🤨 Enter between 1 and 20...");
     } else if (guessedNumber > number) {
       setContent(".message", "📈 Too High...");
       score--;
@@ -53,8 +60,17 @@ document.querySelector(".check").addEventListener("click", function () {
     showNumber(true);
     disableFieldAndButton(true);
   }
+  resetInput();
   setContent(".score", score);
 });
+
+// Don't needed anymore
+// document.querySelector("input").addEventListener("keyup", function (event) {
+//   if (event.key === "Enter") {
+//     event.preventDefault();
+//     document.querySelector(".check").click();
+//   }
+// });
 
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
@@ -63,5 +79,6 @@ document.querySelector(".again").addEventListener("click", function () {
   showNumber(false, "rgb(0,0,0,0.9)");
   setContent(".message", "😇 Start Guessing...");
   setContent(".scoreText", "🥳 Score:");
+  resetInput();
   disableFieldAndButton(false);
 });
