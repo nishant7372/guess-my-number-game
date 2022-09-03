@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
-  transition: all ease-in-out 0.3s;
 }
 
 button,
@@ -37,6 +36,7 @@ body {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
+  transition: all ease-in-out 0.3s;
 }
 
 .main-container {
