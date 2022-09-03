@@ -81,4 +81,5 @@ document.querySelector(".again").addEventListener("click", function () {
   setContent(".scoreText", "🥳 Score:");
   resetInput();
   disableFieldAndButton(false);
+  document.querySelector(".input").focus();
 });
