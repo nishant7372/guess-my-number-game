@@ -44,6 +44,7 @@ body {
   max-width: 100rem;
   min-width: 43rem;
   width: 95vw;
+  margin-bottom: 2vh;
 }
 
 .header {
