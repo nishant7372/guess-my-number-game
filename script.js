@@ -62,5 +62,6 @@ document.querySelector(".again").addEventListener("click", function () {
   number = Math.trunc(Math.random() * 20) + 1;
   showNumber(false, "rgb(0,0,0,0.9)");
   setContent(".message", "😇 Start Guessing...");
+  setContent(".scoreText", "🥳 Score:");
   disableFieldAndButton(false);
 });
